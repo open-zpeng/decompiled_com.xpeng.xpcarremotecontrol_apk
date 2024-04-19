@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" android:versionCode="29" android:versionName="10" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" coreApp="true" package="com.xpeng.xpcarremotecontrol" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="29"/>
+    <uses-permission android:name="android.car.permission.CAR_VENDOR_EXTENSION"/>
+    <uses-permission android:name="com.xiaopeng.permission.IPC"/>
+    <application android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.xpeng.xpcarremotecontrol.App" android:persistent="true" android:allowBackup="false" android:supportsRtl="true" android:extractNativeLibs="false" android:roundIcon="@mipmap/ic_launcher_round" android:usesNonSdkApi="true">
+        <service android:name="com.xpeng.xpcarremotecontrol.service.RemoteControlService">
+            <intent-filter>
+                <action android:name="com.xpeng.xpcarremotecontrol.RemoteControlService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.xiaopeng.lib.framework.ipcmodule.AgentService" android:permission="com.xiaopeng.permission.SERVICE" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.xiaopeng.ipc.AgentService"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
